@@ -32,10 +32,10 @@ class UserForm2(Form):
         validators.DataRequired(message="El nombre es requerido"),
         validators.length(min=4, max=20, message="requiere min=4 max=20")
     ])
-    apaterno=StringField('apaterno', [
+    apaterno=StringField('Apaterno', [
         validators.DataRequired(message="El apellido es requerido")
     ])
-    email=EmailField('correo', [
+    email=EmailField('Correo', [
         validators.DataRequired(message="El correo es requerido"),
         validators.Email(message="Ingrese un correo valido")
     ])

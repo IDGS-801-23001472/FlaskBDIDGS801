@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block container %}
+{% import "_macros.html" as macros %}
+
+<div class="mt-5">
+    <a href="/" class="flex flex-col items-center bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs md:flex-row md:max-w-xl md:flex-row md:max-w-xl">
+        <img src="{{url_for('static',filename='img/IDGS801.jpg')}}" class=" rounded-2xl h-6 mr-3 sm:h-9" alt="Flowbite Logo">
+        <div class="flex flex-col justify-between md:p-4 leading-normal">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-heading">
+                Nombre: {{nombre}}
+            </h5>
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-heading">
+                Apellidos: {{apaterno}}
+            </h3>
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-heading">
+                Correo: {{email}}
+            </h3>
+        </div>
+    </a>
+  </form>
+</div>
+
+{%endblock%}

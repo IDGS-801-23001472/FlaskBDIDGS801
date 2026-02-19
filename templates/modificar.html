@@ -7,6 +7,11 @@
     {{ form.csrf_token }}
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
+    <div class="relative z-0 w-full mb-5 group hidden">
+      {{ macros.campoNuevo(form.id,
+        class="block py-2.5 px-50 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
+      ) }}
+    </div>
     <div class="relative z-0 w-full mb-5 group">
       {{ macros.campoNuevo(form.nombre,
         class="block py-2.5 px-50 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
@@ -25,7 +30,7 @@
 
     <button type="submit"
       class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
-      Agregar
+      Modificar
     </button>
     <a href="index"
       class="text-white bg-danger box-border border border-transparent hover:bg-danger-strong focus:ring-4 focus:ring-danger-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">

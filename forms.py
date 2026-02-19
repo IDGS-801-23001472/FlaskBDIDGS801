@@ -25,7 +25,7 @@ class UserForm(Form):
     ])
 
 class UserForm2(Form):
-    id=IntegerField('id',
+    id=IntegerField('Id',
     [validators.number_range(min=1, max=20, message="valor no valido")
     ])
     nombre=StringField('Nombre', [

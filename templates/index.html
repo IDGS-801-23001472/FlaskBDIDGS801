@@ -15,7 +15,7 @@
                 </th>
                 <th scope="col" class="px-6 py-3 font-medium">
                     <div class="flex items-center">
-                        APaterno
+                        Apellidos
                         <a href="#">
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
                         </a>
@@ -24,6 +24,14 @@
                 <th scope="col" class="px-6 py-3 font-medium">
                     <div class="flex items-center">
                         Correo
+                        <a href="#">
+                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
+                        </a>
+                    </div>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <div class="flex items-center">
+                        Telefono
                         <a href="#">
                             <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
                         </a>
@@ -47,10 +55,13 @@
                     {{ alum.nombre }}
                 </th>
                 <td class="px-6 py-4">
-                    {{ alum.apaterno }}
+                    {{ alum.apellidos }}
                 </td>
                 <td class="px-6 py-4">
                     {{ alum.email }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ alum.telefono }}
                 </td>
                 <td class="px-6 py-4 text-right">
                     <a href="modificar?id={{ alum.id }}" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Editar</a>

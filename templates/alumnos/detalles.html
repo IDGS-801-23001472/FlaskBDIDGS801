@@ -18,6 +18,14 @@
             <h3 class="mb-2 text-2xl font-bold tracking-tight text-heading">
                 Telefono: {{telefono}}
             </h3>
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-heading">
+                Cursos:
+            </h3>
+            {% for curso in cursos %}
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-heading">
+                {{ curso.nombre }}
+            </h3>
+            {%endfor%}
         </div>
     </a>
   </form>

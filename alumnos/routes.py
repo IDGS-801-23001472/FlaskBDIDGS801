@@ -13,14 +13,14 @@ from models import Alumnos
 
 @alumnos.route("/alumnos")
 def alumnosIndex():
-	create_form = forms.UserForm2(request.form)
+	create_form = forms.AlumnoForm(request.form)
 	#ORM select * from alumnos
 	alumno = Alumnos.query.all()
 	return render_template("alumnos/index.html", form=create_form, alumno=alumno)
 
 @alumnos.route("/alumnos/crear",methods=['GET','POST'])
 def alumnosCrear():
-	create_form = forms.UserForm2(request.form)
+	create_form = forms.AlumnoForm(request.form)
 	if request.method=='POST':
 		alum = Alumnos(nombre = create_form.nombre.data,
 				 apellidos = create_form.apellidos.data,
@@ -33,7 +33,7 @@ def alumnosCrear():
 
 @alumnos.route("/alumnos/modificar",methods=['GET','POST'])
 def alumnosModificar():
-	create_form = forms.UserForm2(request.form)
+	create_form = forms.AlumnoForm(request.form)
 	if request.method=='GET':
 		id = request.args.get('id')
 		# select * from alumnos where id == id
@@ -58,7 +58,7 @@ def alumnosModificar():
 
 @alumnos.route("/alumnos/eliminar",methods=['GET','POST'])
 def alumnosEliminar():
-	create_form = forms.UserForm2(request.form)
+	create_form = forms.AlumnoForm(request.form)
 	if request.method=='GET':
 		id = request.args.get('id')
 		# select * from alumnos where id == id
@@ -82,7 +82,7 @@ def alumnosEliminar():
 
 @alumnos.route("/alumnos/detalles",methods=['GET','POST'])
 def alumnosDetalles():
-	create_form = forms.UserForm2(request.form)
+	create_form = forms.AlumnoForm(request.form)
 	if request.method=='GET':
 		id = request.args.get('id')
 		# select * from alumnos where id == id
@@ -92,4 +92,5 @@ def alumnosDetalles():
 		apellidos = alum1.apellidos
 		email = alum1.email
 		telefono = alum1.telefono
-	return render_template("alumnos/detalles.html", id=id, nombre=nombre, apellidos=apellidos, email=email, telefono=telefono)
+		cursos = alum1.cursos
+	return render_template("alumnos/detalles.html", id=id, nombre=nombre, apellidos=apellidos, email=email, telefono=telefono, cursos=cursos)

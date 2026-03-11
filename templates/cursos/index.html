@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block container %}
+<div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
+  <a href="cursos/crear" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/10 font-medium rounded-base text-sm px-100 py-2.5 text-center leading-5">Nuevo</a>
+    <table class="w-full text-sm text-left rtl:text-right text-body mt-5">
+        <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
+            <tr>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <div class="flex items-center">
+                        Nombre
+                        <a href="#">
+                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
+                        </a>
+                    </div>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <div class="flex items-center">
+                        Descripcion
+                        <a href="#">
+                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
+                        </a>
+                    </div>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <div class="flex items-center">
+                        Maestro
+                        <a href="#">
+                            <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/></svg>
+                        </a>
+                    </div>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <span class="sr-only">Editar</span>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <span class="sr-only">Detalles</span>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <span class="sr-only">Inscribir</span>
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    <span class="sr-only">Eliminar</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+          {%for curs in curso%}
+            <tr class="bg-neutral-primary-soft border-b  border-default">
+                <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                    {{ curs.nombre }}
+                </th>
+                <td class="px-6 py-4">
+                    {{ curs.descripcion }}
+                </td>
+                <td class="px-6 py-4">
+                    {{ curs.maestro.nombre }} {{ curs.maestro.apellidos }}
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="cursos/modificar?id={{ curs.id }}" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Editar</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="cursos/detalles?id={{ curs.id }}" class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Detalles</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="inscribir" class="text-white bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Inscribir</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="cursos/eliminar?id={{ curs.id }}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-base text-sm px-4 py-2.5 text-center leading-5">Eliminar</a>
+                </td>
+            </tr>
+          {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+{%endblock%}
